@@ -2,36 +2,32 @@
 package com.devmedia.mvc.repository;
 
 import java.util.List;
-
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
 import com.devmedia.mvc.entity.Livro;
 
-@Repository
 public interface LivroRepository extends JpaRepository<Livro, Long> {
 
 	/**
-	 * Encontra todos os livros de um mesmo autor.
-	 *
+	 * Encontra todos os livros de um autor.
+	 * 
 	 * @param autor
 	 * @return lista de livros
 	 */
 	List<Livro> findByAutor(String autor);
-
+	
 	/**
-	 * Encontra um livro a partir do seu título.
-	 * Retorna uma lista pois podem existir mais de um livro com mesmo título.
-	 *
+	 * Encontra um livro a partir do seu t�tulo. Retorna uma lista pois podem existir
+	 * mais de um livro com mesmo t�tulo.
+	 * 
 	 * @param titulo
 	 * @return lista de livros
 	 */
 	List<Livro> findByTitulo(String titulo);
-
+	
 	/**
-	 * Encontra um livro a partir de seu isbn, como o isbn é único,
-	 * apenas um livro pode ser encontrado.
-	 *
+	 * Encontra um livro a partir de seu isbn. 
+	 * 
 	 * @param isbn
 	 * @return livro
 	 */
